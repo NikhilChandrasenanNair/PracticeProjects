@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form name="selectForm">
+
+                                                                 <!--                                 Multiple checkbox options                                 -->
+
+    <p>
+        <strong>Choose some music types, then click the button below:</strong>
+        <br/>
+        Jazz:<input type="checkbox" checked="checked">
+        <br/>
+        Blues:<input type="checkbox">
+        <br/>
+        New Age:<input type="checkbox">
+        <br/>
+        Classical:<input type="checkbox">
+        <br/>
+        Opera:<input type="checkbox">
+    </p>
+
+    <p>
+        <input type="button" value="How many checkboxes are selected?"
+               onclick="howManyCheckBoxes()">
+    </p>
+
+                                                                 <!--                                 Multiple select options                                 -->
+
+    <p>
+        <select name="musicTypes" multiple="multiple">
+            <option selected="selected">R&B</option>
+            <option>Jazz</option>
+            <option>Blues</option>
+            <option>New Age</option>
+            <option>Classical</option>
+            <option>Opera</option>
+        </select>
+    </p>
+    <p>
+        <input type="button" value="How many multiple options are selected?"
+               onclick="howManyOptions()">
+    </p>
+</form>
+<script>
+    function howManyCheckBoxes() {
+        var numberOfSelected = document.getElementsByTagName("input");
+
+        var count = 0;
+        for (var i = 0; i < numberOfSelected.length; i++) {
+            if (numberOfSelected[i].type == "checkbox" && numberOfSelected[i].checked == true) {
+                count++;
+            }
+        }
+        if (count == 1) {
+            alert("You have selected: " + count + " option");
+        } else {
+            alert("You have selected: " + count + " options");
+        }
+    }
+    function howManyOptions(){
+       var numberOfSelected = document.getElementsByTagName("option");
+
+        var count = 0;
+        for(var i = 0; i< numberOfSelected.length;i++){
+            if(numberOfSelected[i].selected == true){
+                count++;
+            }
+        }
+        if (count == 1) {
+            alert("You have selected: " + count + " option");
+        } else {
+            alert("You have selected: " + count + " options");
+        }
+    }
+
+</script>
+</body>
+</html>
