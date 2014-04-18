@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Css Clock</title>
+    <style>
+        body{
+            width: 1920px;
+            height: 1080px;
+            background: radial-gradient(ellipse at top, #f0ffff 0%, #ababab 100%);
+        }
+        #clock{
+            position: absolute;
+            left:37%;
+            top:0%;
+            border: double 10px #2C2C2C;
+            border-radius: 50%;
+            width: 500px;
+            height:500px;
+            background: #5E999B;
+        }
+        #seconds{
+            width: 2px;
+            height: 250px;
+            background: #FFFFFF;
+            position:relative;
+            left:50%;
+            top:50%;
+            transform-origin: 0 0 0;
+            -webkit-transform-origin: 0 0 0;
+            animation:mymove 60s linear infinite;
+            -webkit-animation:mymove 60s linear infinite;
+        }
+        @keyframes mymove {
+            100% {
+                -moz-transform: rotate(360deg);
+            }
+        }
+        @-webkit-keyframes mymove {
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+        #hours{
+            width: 4px;
+            height: 100px;
+            background: #ff0000;
+            position:relative;
+            left:50%;
+            top:00%;
+            transform: rotate(180Deg);
+            transform-origin: 0 0 0;
+            -webkit-transform-origin: 0 0 0;
+            animation:mymove 86400s linear infinite;
+            -webkit-animation:mymove 86400s linear infinite;
+
+        }
+        #minutes{
+            width: 3px;
+            height: 200px;
+            background: greenyellow;
+            position:relative;
+            left:50%;
+            top:-20%;
+            transform: rotate(45Deg);
+            transform-origin: 0 0 0;
+            -webkit-transform-origin: 0 0 0;
+            animation:mymove 3600s linear infinite;
+            -webkit-animation:mymove 3600s linear infinite;
+
+        }
+
+
+        /*.chain-bottom {
+            background-color: transparent;
+            width: 155px;
+            height: 4px;
+            position: absolute;
+            background: #EEE;
+            transform: rotate(9deg);
+            content: "";
+            background-image: linear-gradient(90deg, #666 25%, transparent 25%, transparent 75%, #666 75%, #666);
+            background-size: 8px 2px;
+            background-position: 0 0, 30px 30px;
+            animation: chainDown 2s linear infinite;
+        }
+        @keyframes chainDown {
+            0% {
+                background-position: 100% 0;
+            }
+            100% {
+                background-position: 0 100%;
+            }
+        }*/
+    </style>
+</head>
+<body>
+<div id="clock">
+    <div id="seconds"></div>
+    <div id="hours"></div>
+    <div id="minutes"></div>
+<!--
+
+    <div class="chain-bottom"></div>
+-->
+
+</div>
+
+</body>
+</html>

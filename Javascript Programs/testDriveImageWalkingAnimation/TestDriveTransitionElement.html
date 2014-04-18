@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Test Drive Transition Element</title>
+
+</head>
+<body>
+<div>
+    <img src="url.gif" id="test" style="left:0px; position: absolute; visibility: hidden;"  >
+    <img src="url.jpg" id="test1" style="left:0px; position: absolute; visibility: visible;"  >
+
+</div>
+<div>
+    <button id="walk" onclick="walk()" style="z-index:100;position: absolute;">Walk</button>
+</div>
+<div>
+    <button id="startAgain" onclick="startAgain()" style="z-index:100;position: absolute;left:10%">Start Again</button>
+</div>
+
+<script>
+
+
+     function walk() {
+        var moveLeft = 0;
+
+         id = setInterval(frame,20);  // Global variable
+        function frame() {
+
+            moveLeft++;
+            document.getElementById("test1").style.visibility = "hidden";
+            document.getElementById("test").style.visibility = "visible";
+            document.getElementById("test").style.left = moveLeft + "px";
+
+            var distLeft = window.innerWidth - 400;
+            if (moveLeft ==  distLeft) {
+                alert("Can't walk any further");
+                clearInterval(id);
+            }
+        }
+    }
+     function startAgain() {
+             clearInterval(id);
+             document.getElementById("test1").style.visibility = "visible";
+             document.getElementById("test").style.visibility = "hidden";
+     }
+
+</script>
+</body>
+</html>

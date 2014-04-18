@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Test Drive Animate Circle</title>
+    <style>
+        #circleClockwise{
+            border: double 2px orange;
+            background: orange;
+            position: absolute;
+            left: 40%;
+            top: 30%;
+            width: 400px;
+            height: 400px;
+            margin: -60px 0 0 -60px;
+            -webkit-animation: spin 1s linear infinite;
+            -moz-animation: spin 1s linear infinite;
+            animation: spin 1s linear infinite;
+
+        }
+
+        @-moz-keyframes spin {
+            100% {
+                -moz-transform: rotate(360deg);
+                transform: rotate(-360deg);
+            }
+            50% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(-360deg);
+            }
+            25% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @-webkit-keyframes spin {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(-360deg);
+            }
+            50% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(-360deg);
+            }
+            25% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+            50% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(-360deg);
+            }
+            25% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        #circleAntiClockwise{
+
+            border: 2px double orangered;
+            height: 200px;
+            left: 42%;
+            position: absolute;
+            top: 33%;
+            width: 200px;
+            -webkit-animation: antiSpin 1s linear infinite;
+            -moz-animation: antiSpin 1s linear infinite;
+            animation: antiSpin 1s linear infinite;
+            background: orangered;
+        }
+
+        @-moz-keyframes antiSpin {
+            100% {
+                -moz-transform: rotate(-360deg);
+                transform: rotate(-360deg);
+            }
+            50% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+            25% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(-360deg);
+            }
+        }
+
+        @-webkit-keyframes antiSpin {
+            100% {
+                -webkit-transform: rotate(-360deg);
+                transform: rotate(-360deg);
+            }
+            50% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+            25% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(-360deg);
+            }
+        }
+
+        @keyframes antiSpin {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(-360deg);
+            }
+            50% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+            25% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(-360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="circleClockwise" >
+</div>
+<div id="circleAntiClockwise" onmouseclick="stop(event)" >
+
+</div>
+
+</body>
+</html>
